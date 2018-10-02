@@ -7,12 +7,8 @@ class BoardSquare {
         this.isFaceUp = false;
         this.isMatched = false;
         this.setColor(color);
-
-       
     }
-
     
-
     handleEvent(event) {
         // 2
         switch (event.type) {
@@ -33,12 +29,9 @@ class BoardSquare {
     }
 
     setColor(color) {
-
         const faceUpElement = this.element.getElementsByClassName('faceup')[0];
-
         // remove the previous color if it exists
         faceUpElement.classList.remove(this.color);
-        
         this.color = color;
         faceUpElement.classList.add(color);
     }
@@ -46,9 +39,6 @@ class BoardSquare {
     reset() {
         this.isFaceUp = false;
         this.isMatched = false;
-
-        
-
         this.element.classList.remove('flipped');
     }
     
@@ -59,8 +49,6 @@ class BoardSquare {
 }
 
 const flush = new Audio('POP1.wav');
-
-
 let firstFaceupSquare = null;
 function squareFlipped(square) {
     // 2
@@ -68,7 +56,6 @@ function squareFlipped(square) {
         firstFaceupSquare = square;
         return
     }
-    
     // 3
     if (firstFaceupSquare.color === square.color) {
         // 4
@@ -82,7 +69,7 @@ function squareFlipped(square) {
         const b = square;
     
         firstFaceupSquare = null;
-    
+        
         setTimeout(function() {
         a.reset();
         b.reset();
@@ -100,7 +87,6 @@ function generateColorPairs() {
         colorPairs.push('color-' + i);
         colorPairs.push('color-' + i);
       }
-  
       return colorPairs;
     }
   }
@@ -120,7 +106,6 @@ function generateColorPairs() {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-  
     return array;
 }
 
