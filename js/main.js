@@ -13,10 +13,6 @@ class BoardSquare {
         switch (event.type) {
           case "click":
             // 3
-            console.log(this.color + ' square was clicked');
-            
-            
-
             if ( this.isFaceUp || this.isMatched ) {
                 return;
             }
