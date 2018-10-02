@@ -3,7 +3,6 @@ class BoardSquare {
     constructor(element, color) {
         this.element = element;
         this.element.addEventListener("click", this, false);
-
         this.isFaceUp = false;
         this.isMatched = false;
         this.setColor(color);
